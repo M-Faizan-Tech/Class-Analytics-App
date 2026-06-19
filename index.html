@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTAI - Ultimate Class Analytics</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.4/brython.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.12.4/brython_stdlib.js"></script>
+</head>
+<body onload="brython()">
+
+    <h1>📊 Ultimate Dynamic Class Analytics</h1>
+    <p>Muhammad Faizan Web App for ACTAI Assignment</p>
+
+    <div class="main-container">
+        
+        <div class="left-panel">
+            
+            <div class="card">
+                <h3>⚙️ 1. Manage Subjects</h3>
+                <div style="display: flex; gap: 10px; margin-bottom: 10px;">
+                    <input type="text" id="new-subject-name" placeholder="e.g. English, OOP" style="flex: 2;">
+                    <input type="number" id="new-subject-total" placeholder="Max (e.g. 100, 50)" style="flex: 1;">
+                    <button id="add-sub-btn" class="btn" style="padding: 10px;">➕</button>
+                </div>
+                <p style="font-size: 13px; color: #787c99; margin-bottom: 5px;">Active Subjects & Max Marks:</p>
+                <div id="active-subjects-tags" style="display: flex; gap: 5px; flex-wrap: wrap;">
+                    </div>
+            </div>
+
+            <div class="card">
+                <h3>📝 2. Add Student Data</h3>
+                <div class="form-group">
+                    <label>Student Name:</label>
+                    <input type="text" id="student-name" placeholder="e.g. Muhammad Faizan">
+                </div>
+                
+                <div id="dynamic-subject-inputs"></div>
+                
+                <button id="add-student-btn" class="btn" style="width: 100%; margin-top: 15px;">➕ Add Student</button>
+            </div>
+
+            <div class="card" style="text-align: center;">
+                <button id="demo-btn" class="btn btn-secondary">✨ Load 50+ Multi-Subject Demo Data</button>
+            </div>
+        </div>
+
+        <div class="right-panel">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="card">
+                    <h3>🏆 Top 3 Highest Scorers</h3>
+                    <ul id="top-3-list">No data yet...</ul>
+                </div>
+                <div class="card">
+                    <h3>📉 Lowest Scorer</h3>
+                    <p id="lowest-scorer">N/A</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>💡 Class Categorization</h3>
+                <p><strong>Above Class Average:</strong> <span id="above-avg" style="color: #9ece6a;">-</span></p>
+                <p><strong>Below Class Average:</strong> <span id="below-avg" style="color: #f7768e;">-</span></p>
+            </div>
+
+            <div class="card table-container">
+                <h3>📋 Student Records</h3>
+                <table id="analytics-table">
+                    <thead>
+                        <tr id="table-headers">
+                            <th>Name</th>
+                            <th>Percentage</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student-rows">
+                        <tr><td id="empty-row-msg" colspan="3" style="text-align:center;">No records found. Setup subjects and add students.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/python" src="app.py"></script>
+
+</body>
+</html>
